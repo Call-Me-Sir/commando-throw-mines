@@ -148,7 +148,6 @@ return {
 				impulsefactor = 0,
 				interceptedbyshieldtype = 4,
 				intensity = 0.01,
-				model = "cormine1.s3o",
 				name = "Commando Mine Launcher",
 				noselfdamage = true,
 				range = 275,
