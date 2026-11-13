@@ -122,6 +122,9 @@ return {
 				turret = true,
 				weapontype = "LaserCannon",
 				weaponvelocity = 930,
+				customparams = {
+					weapons_group = 1,
+				}
 				damage = {
 					default = 100,
 					vtol = 30,
@@ -167,6 +170,7 @@ return {
 					spawns_name = "cormine1",
 					spawns_surface = "LAND",
 					stockpilelimit = 2,
+					weapons_group = 2,
 				},
 				damage = {
 					default = 1,
