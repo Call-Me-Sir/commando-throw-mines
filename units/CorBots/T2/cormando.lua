@@ -124,7 +124,7 @@ return {
 				weaponvelocity = 930,
 				customparams = {
 					weapons_group = 1,
-				}
+				},
 				damage = {
 					default = 100,
 					vtol = 30,
