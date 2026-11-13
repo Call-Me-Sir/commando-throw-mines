@@ -523,7 +523,7 @@ AimWeapon1(heading, pitch)
 	return (aimReady);
 }
 
-AimWeapon2(heading, pitch)
+AimWeapon2(heading, pitch){
 	return (1);
 }
 
