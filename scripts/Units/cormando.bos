@@ -534,9 +534,14 @@ AimWeapon2(heading, pitch){
 
 	if( get INBUILDSTANCE )  
 	{  
-		call-script StopBuilding();  
-		set INBUILDSTANCE to 0;       // Instead of after sleep 3000  
-		torsoRotation = 0;  
+		signal SIGNAL_BUILD;          // kill any in-progress StartBuilding wait  
+		hide lnano;  
+		hide rnano;  
+		set INBUILDSTANCE to 0;  
+		turn luparm to x-axis <0> speed <375.0>;  
+		turn larm to x-axis <0> speed <375.0>;  
+		turn ruparm to x-axis <0> speed <375.0>;  
+		turn rarm to x-axis <0> speed <375.0>;  
 	} 
 	turn aimy1 to y-axis heading speed <300.0>;
 	torsoRotation = heading;
