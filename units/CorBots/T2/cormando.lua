@@ -151,7 +151,7 @@ return {
 				model = "cormine1",
 				name = "Commando Mine Launcher",
 				noselfdamage = true,
-				range = 275,
+				range = 200,
 				reloadtime = 1,
 				rgbcolor = "0.8 0.8 0.25",
 				size = 8,

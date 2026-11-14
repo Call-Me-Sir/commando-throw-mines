@@ -536,8 +536,10 @@ FireWeapon1()
 	move barrel to y-axis [0] now;
 }
 
-FireWeapon2()
+FireWeapon2(torsoing)
 {
+	torsoRotation = torsoing;
+	turn aimy1 to y-axis torsoing speed <480>;
 	turn ruparm to x-axis <-120> speed <60>;	
 	turn rarm to x-axis <-120> speed <60>;	
 	sleep 250;
