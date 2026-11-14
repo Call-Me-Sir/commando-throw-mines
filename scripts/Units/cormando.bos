@@ -538,8 +538,8 @@ FireWeapon1()
 
 FireWeapon2()
 {
-	turn ruparm to x-axis <120> speed <60>;	
-	turn rarm to x-axis <120> speed <60>;	
+	turn ruparm to x-axis <-120> speed <60>;	
+	turn rarm to x-axis <-120> speed <60>;	
 	sleep 250;
 	turn ruparm to x-axis <0> speed <60>;	
 	turn rarm to x-axis <0> speed <60>;	
