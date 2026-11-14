@@ -535,8 +535,8 @@ AimWeapon2(heading, pitch){
 
 	if( get INBUILDSTANCE )  
 	{  
-		call-script StopBuilding();   // tear down nano pose now  
-		set INBUILDSTANCE to 0;       // don't wait for its sleep 3000  
+		call-script StopBuilding();  
+		set INBUILDSTANCE to 0;       // Instead of after sleep 3000  
 		torsoRotation = 0;  
 	} 
 
