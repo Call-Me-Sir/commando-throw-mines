@@ -159,7 +159,7 @@ return {
 				soundhitwet = "splsmed",
 				soundstart = "bombrel",
 				stockpile = true,
-				stockpiletime = 3,
+				stockpiletime = 5,
 				turret = true,
 				waterbounce = true,
 				waterweapon = false,
@@ -169,7 +169,7 @@ return {
 					bogus = 1,
 					spawns_name = "cormine1",
 					spawns_surface = "LAND",
-					stockpilelimit = 2,
+					stockpilelimit = 3,
 					weapons_group = 2,
 				},
 				damage = {
