@@ -439,7 +439,13 @@ RestoreTorsoAfterDelay()
 {  
 	set-signal-mask SIGNAL_AIM2;  
 	sleep 2000;                      // tune to taste  
-	turn torso to y-axis <0.0> speed <150.0>;  
+	turn torso to y-axis <0.0> speed <150.0>;
+	turn aimy1 to y-axis <0.0> speed <300.0>;  
+	if( get INBUILDSTANCE == 0 )
+	{  
+		turn aimy1 to y-axis <0.0> speed <300.0>;  
+		torsoRotation = 0;  
+	} 
 }  
 
 AimWeapon1(heading, pitch)
@@ -527,8 +533,18 @@ AimWeapon2(heading, pitch){
 	signal SIGNAL_AIM2;  
 	set-signal-mask SIGNAL_AIM2; 
 
-	turn torso to y-axis heading speed <300.0>;  
-	// wait-for-turn torso around y-axis;
+	if( get INBUILDSTANCE )  
+	{  
+		call-script StopBuilding();   // tear down nano pose now  
+		set INBUILDSTANCE to 0;       // don't wait for its sleep 3000  
+		torsoRotation = 0;  
+	} 
+
+	turn torso to y-axis heading speed <300.0>;
+	turn aimy1 to y-axis heading speed <600.0>;
+	torsoRotation = heading;
+	wait-for-turn aimy1 around y-axis;  
+	// sleep 300;
 	start-script RestoreTorsoAfterDelay();
 	return (1);
 }

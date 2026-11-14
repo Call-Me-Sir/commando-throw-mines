@@ -161,6 +161,7 @@ return {
 				stockpile = true,
 				stockpiletime = 5,
 				turret = true,
+				tolerance = 6000,
 				waterbounce = true,
 				waterweapon = false,
 				weapontype = "Cannon",
