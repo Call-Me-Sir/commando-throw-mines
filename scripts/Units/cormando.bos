@@ -545,7 +545,7 @@ AimWeapon2(heading, pitch){
 	} 
 	turn aimy1 to y-axis heading speed <300.0>;
 	torsoRotation = heading;
-	wait-for-turn aimy1 around y-axis;  
+	// wait-for-turn aimy1 around y-axis;
 	// sleep 300;
 	start-script RestoreTorsoAfterDelay();
 	return (1);
