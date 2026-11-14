@@ -3,7 +3,7 @@
 
 piece  turret, sleeve, barrel, torso, rnano,
        lnano, pelvis, lthigh, rthigh, rleg, lleg, lfoot, rfoot, luparm, ruparm,
-       rarm, larm, head, flare, aimy1, aimx1;
+       rarm, larm, head, flare, flare2, aimy1, aimx1;
 
 
 
@@ -349,6 +349,7 @@ Create()
 	hide rnano;
 	hide aimx1;
 	hide flare;
+	hide flare2;
 	hide aimy1;
 	isMoving = FALSE;
 	torsoRotation = 0;
@@ -411,7 +412,7 @@ QueryWeapon1(pieceIndex)
 
 QueryWeapon2(pieceIndex)
 {
-	pieceIndex = flare;
+	pieceIndex = flare2;
 }
 
 AimFromWeapon1(pieceIndex)
@@ -421,7 +422,7 @@ AimFromWeapon1(pieceIndex)
 
 AimFromWeapon2(pieceIndex)
 {
-	pieceIndex = sleeve;
+	pieceIndex = rarm;
 }
 
 RestoreAfterDelay()
@@ -537,10 +538,11 @@ FireWeapon1()
 
 FireWeapon2()
 {
-	emit-sfx 1024 + 0 from flare;
-    move barrel to y-axis [-0.5] speed [3.750000];
+	turn ruparm to x-axis <45> speed <60>;	
+	turn rarm to x-axis <45> speed <60>;	
 	sleep 50;
-	move barrel to y-axis [0] now;
+	turn ruparm to x-axis <0> speed <60>;	
+	turn rarm to x-axis <0> speed <60>;	
 }
 
 QueryNanoPiece(pieceIndex)
