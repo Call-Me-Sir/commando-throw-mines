@@ -435,6 +435,13 @@ RestoreAfterDelay()
 	move turret to y-axis [0.0] speed [20.0];
 }
 
+RestoreTorsoAfterDelay()  
+{  
+	set-signal-mask SIGNAL_AIM2;  
+	sleep 2000;                      // tune to taste  
+	turn torso to y-axis <0.0> speed <150.0>;  
+}  
+
 AimWeapon1(heading, pitch)
 {
 	var turretHeading;
@@ -521,7 +528,8 @@ AimWeapon2(heading, pitch){
 	set-signal-mask SIGNAL_AIM2; 
 
 	turn torso to y-axis heading speed <300.0>;  
-	wait-for-turn torso around y-axis;  
+	wait-for-turn torso around y-axis; 
+	start-script RestoreTorsoAfterDelay();
 	return (1);
 }
 
@@ -533,7 +541,7 @@ FireWeapon1()
 	move barrel to y-axis [0] now;
 }
 
-FireWeapon2(torsoing)
+FireWeapon2()
 {
 	// torsoRotation = torsoing;
 	// turn aimy1 to y-axis torsoing speed <480>;
@@ -542,6 +550,7 @@ FireWeapon2(torsoing)
 	sleep 250;
 	turn ruparm to x-axis <0> speed <60>;	
 	turn rarm to x-axis <0> speed <60>;	
+
 }
 
 QueryNanoPiece(pieceIndex)
