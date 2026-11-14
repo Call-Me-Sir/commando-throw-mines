@@ -3,7 +3,7 @@
 
 piece  turret, sleeve, barrel, torso, rnano,
        lnano, pelvis, lthigh, rthigh, rleg, lleg, lfoot, rfoot, luparm, ruparm,
-       rarm, larm, head, flare, /*flare2,*/ aimy1, aimx1;
+       rarm, larm, head, flare, /*flare2,*/ aimy1, aimx1, aimy2;
 
 
 
@@ -344,6 +344,7 @@ Create()
 	hide flare;
 	// hide flare2;
 	hide aimy1;
+	hide aimy2;
 	isMoving = FALSE;
 	torsoRotation = 0;
 	lastHeading = 0;
@@ -439,7 +440,7 @@ RestoreTorsoAfterDelay()
 {  
 	set-signal-mask SIGNAL_AIM2;  
 	sleep 2000;                      // tune to taste  
-	// turn aimy1 to y-axis <0.0> speed <150.0>;  
+	turn aimy2 to y-axis <0.0> speed <150.0>;
 	if( get INBUILDSTANCE == 0 )
 	{  
 		turn aimy1 to y-axis <0.0> speed <150.0>;  
@@ -544,13 +545,14 @@ AimWeapon2(heading, pitch){
 		turn rarm to x-axis <0> speed <375.0>;  
 	} 
 	turn aimy1 to y-axis heading speed <300.0>;
+	turn aimy2 to y-axis heading speed <450.0>;
 	torsoRotation = heading;
-	// wait-for-turn aimy1 around y-axis;
+	wait-for-turn aimy2 around y-axis;
 	// sleep 300;
-	while( get ABS(get PIECE_Y(aimy1) - heading) > 1000 )  
-	{  
-		sleep 33;  
-	} 
+	// while( get ABS(get PIECE_Y(aimy1) - heading) > 1000 )  
+	// {  
+	// 	sleep 33;  
+	// } 
 	start-script RestoreTorsoAfterDelay();
 	return (1);
 }
