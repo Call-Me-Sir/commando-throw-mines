@@ -3,7 +3,7 @@
 
 piece  turret, sleeve, barrel, torso, rnano,
        lnano, pelvis, lthigh, rthigh, rleg, lleg, lfoot, rfoot, luparm, ruparm,
-       rarm, larm, head, flare, flare2, aimy1, aimx1;
+       rarm, larm, head, flare, /*flare2,*/ aimy1, aimx1;
 
 
 
@@ -342,7 +342,7 @@ Create()
 	hide rnano;
 	hide aimx1;
 	hide flare;
-	hide flare2;
+	// hide flare2;
 	hide aimy1;
 	isMoving = FALSE;
 	torsoRotation = 0;
@@ -404,7 +404,7 @@ QueryWeapon1(pieceIndex)
 
 QueryWeapon2(pieceIndex)
 {
-	pieceIndex = flare2;
+	pieceIndex = rnano;
 }
 
 AimFromWeapon1(pieceIndex)
