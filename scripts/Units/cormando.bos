@@ -533,12 +533,12 @@ AimWeapon2(heading, pitch){
 	signal SIGNAL_AIM2;  
 	set-signal-mask SIGNAL_AIM2; 
 
-	if( get INBUILDSTANCE )  
-	{  
-		call-script StopBuilding();  
-		set INBUILDSTANCE to 0;       // Instead of after sleep 3000  
-		torsoRotation = 0;  
-	} 
+	// if( get INBUILDSTANCE )  
+	// {  
+	// 	call-script StopBuilding();  
+	// 	set INBUILDSTANCE to 0;       // Instead of after sleep 3000  
+	// 	torsoRotation = 0;  
+	// } 
 
 	turn torso to y-axis heading speed <300.0>;
 	turn aimy1 to y-axis heading speed <600.0>;
