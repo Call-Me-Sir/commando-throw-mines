@@ -547,6 +547,10 @@ AimWeapon2(heading, pitch){
 	torsoRotation = heading;
 	// wait-for-turn aimy1 around y-axis;
 	// sleep 300;
+	while( get ABS(get PIECE_Y(aimy1) - heading) > 1000 )  
+	{  
+		sleep 33;  
+	} 
 	start-script RestoreTorsoAfterDelay();
 	return (1);
 }
