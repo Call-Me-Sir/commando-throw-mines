@@ -10,6 +10,7 @@ piece  turret, sleeve, barrel, torso, rnano,
 #define SIGNAL_AIM1 2
 #define SIGNAL_BUILD 4
 #define SIGNAL_AIM_TRACKER 8
+#define SIGNAL_AIM2 512
 
 lua_UnitScriptDecal(lightIndex, xpos,zpos, heading) 
 {
@@ -525,6 +526,11 @@ AimWeapon1(heading, pitch)
 }
 
 AimWeapon2(heading, pitch){
+	signal SIGNAL_AIM2;  
+	set-signal-mask SIGNAL_AIM2; 
+
+	turn torso to y-axis heading speed <300.0>;  
+	wait-for-turn torso around y-axis;  
 	return (1);
 }
 
@@ -538,8 +544,8 @@ FireWeapon1()
 
 FireWeapon2(torsoing)
 {
-	torsoRotation = torsoing;
-	turn aimy1 to y-axis torsoing speed <480>;
+	// torsoRotation = torsoing;
+	// turn aimy1 to y-axis torsoing speed <480>;
 	turn ruparm to x-axis <-120> speed <60>;	
 	turn rarm to x-axis <-120> speed <60>;	
 	sleep 250;
