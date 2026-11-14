@@ -439,11 +439,10 @@ RestoreTorsoAfterDelay()
 {  
 	set-signal-mask SIGNAL_AIM2;  
 	sleep 2000;                      // tune to taste  
-	turn torso to y-axis <0.0> speed <150.0>;
-	turn aimy1 to y-axis <0.0> speed <300.0>;  
+	turn aimy1 to y-axis <0.0> speed <150.0>;  
 	if( get INBUILDSTANCE == 0 )
 	{  
-		turn aimy1 to y-axis <0.0> speed <300.0>;  
+		turn aimy1 to y-axis <0.0> speed <150.0>;  
 		torsoRotation = 0;  
 	} 
 }  
@@ -533,15 +532,13 @@ AimWeapon2(heading, pitch){
 	signal SIGNAL_AIM2;  
 	set-signal-mask SIGNAL_AIM2; 
 
-	// if( get INBUILDSTANCE )  
-	// {  
-	// 	call-script StopBuilding();  
-	// 	set INBUILDSTANCE to 0;       // Instead of after sleep 3000  
-	// 	torsoRotation = 0;  
-	// } 
-
-	turn torso to y-axis heading speed <300.0>;
-	turn aimy1 to y-axis heading speed <600.0>;
+	if( get INBUILDSTANCE )  
+	{  
+		call-script StopBuilding();  
+		set INBUILDSTANCE to 0;       // Instead of after sleep 3000  
+		torsoRotation = 0;  
+	} 
+	turn aimy1 to y-axis heading speed <300.0>;
 	torsoRotation = heading;
 	wait-for-turn aimy1 around y-axis;  
 	// sleep 300;
