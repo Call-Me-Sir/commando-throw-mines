@@ -166,7 +166,7 @@ return {
 				weapontype = "Cannon",
 				weaponvelocity = 200,
 				customparams = {
-					bogus = 1,
+					-- bogus = 1,
 					spawns_name = "cormine1",
 					spawns_surface = "LAND",
 					stockpilelimit = 3,
