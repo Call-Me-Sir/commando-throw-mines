@@ -439,7 +439,7 @@ RestoreAfterDelay()
 RestoreTorsoAfterDelay()  
 {  
 	set-signal-mask SIGNAL_AIM2;  
-	sleep 2000;                      // tune to taste  
+	sleep 4000;                      // tune to taste  
 	turn aimy2 to y-axis <0.0> speed <150.0>;
 	if( get INBUILDSTANCE == 0 )
 	{  
@@ -548,6 +548,7 @@ AimWeapon2(heading, pitch){
 	turn aimy2 to y-axis heading speed <450.0>;
 	torsoRotation = heading;
 	wait-for-turn aimy2 around y-axis;
+	signal SIGNAL_AIM2;  
 	// sleep 300;
 	// while( get ABS(get PIECE_Y(aimy1) - heading) > 1000 )  
 	// {  
