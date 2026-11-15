@@ -439,7 +439,7 @@ RestoreAfterDelay()
 RestoreTorsoAfterDelay()  
 {  
 	set-signal-mask SIGNAL_AIM2;  
-	sleep 4000;                      // tune to taste  
+	sleep 5000;                      // tune to taste  
 	turn aimy2 to y-axis <0.0> speed <150.0>;
 	if( get INBUILDSTANCE == 0 )
 	{  
