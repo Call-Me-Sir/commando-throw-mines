@@ -530,8 +530,8 @@ AimWeapon1(heading, pitch)
 }
 
 AimWeapon2(heading, pitch){
-	signal SIGNAL_AIM2;  
-	set-signal-mask SIGNAL_AIM2; 
+	// signal SIGNAL_AIM2;  
+	// set-signal-mask SIGNAL_AIM2; 
 
 	if( get INBUILDSTANCE )  
 	{  
