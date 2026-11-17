@@ -15,7 +15,7 @@ return {
 		cancloak = true,
 		cloakcost = 50,
 		cloakcostmoving = 200,
-		mincloakdistance = 150,
+		mincloakdistance = 200,
 		collisionvolumeoffsets = "0 0 0",
 		collisionvolumescales = "38 50 22",
 		collisionvolumetype = "box",
@@ -57,6 +57,7 @@ return {
 			[7] = "corjamt",
 		},
 		customparams = {
+			jammeroffwhencloaked = true,
 			fall_damage_multiplier = 0,
 			mine_resistant = true,
 			model_author = "FireStorm",

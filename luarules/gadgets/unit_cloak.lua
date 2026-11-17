@@ -62,6 +62,7 @@ for udid, ud in pairs(UnitDefs) do
 			ud.startCloaked,
 			ud.cloakCostMoving,
 			ud.cloakCost,
+			ud.jammerRadius > 0 and ud.customParams.jammeroffwhencloaked, -- [4]
 		}
 	end
 end
@@ -234,6 +235,20 @@ local function SetWantedCloaked(unitID, state)
 			spSetUnitCloak(unitID, 0)
 		end
 		spSetUnitRulesParam(unitID, "wantcloak", 0, alliedTrueTable)
+	end
+end
+
+local JAMMER_SOURCE = "cloakJammerOff"
+
+function gadget:UnitCloaked(unitID, unitDefID, unitTeam)
+	if canCloak[unitDefID] and canCloak[unitDefID][4] then
+		GG.UnitAttributes.SetUnitModifier(unitID, "jammerRadius", 0, JAMMER_SOURCE)
+	end
+end
+
+function gadget:UnitDecloaked(unitID, unitDefID, unitTeam)
+	if canCloak[unitDefID] and canCloak[unitDefID][4] then
+		GG.UnitAttributes.SetUnitModifier(unitID, "jammerRadius", nil, JAMMER_SOURCE)
 	end
 end
 
